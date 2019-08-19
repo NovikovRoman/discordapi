@@ -1,0 +1,24 @@
+{
+  "name": "noroman/discordapi",
+  "description": "Discord API",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Novikov Roman",
+      "email": "service.for.roman@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.1",
+    "guzzlehttp/guzzle": "^6.3",
+    "ext-json": "*",
+    "noroman/authmanager": "^0.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "DiscordAPI\\": "src/"
+    }
+  }
+}
