@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cb819f1a49ab257a617507fcc2a4423",
+    "content-hash": "96b82245919e9d5f7e7b0488051579e7",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -195,16 +195,16 @@
         },
         {
             "name": "noroman/authmanager",
-            "version": "v0.0.1",
+            "version": "v0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NovikovRoman/authmanager.git",
-                "reference": "cbb53c7069e627d241f388b3b99c8090ee52d6b4"
+                "reference": "84db9476553e43ca83c036389bf1c64820db95c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NovikovRoman/authmanager/zipball/cbb53c7069e627d241f388b3b99c8090ee52d6b4",
-                "reference": "cbb53c7069e627d241f388b3b99c8090ee52d6b4",
+                "url": "https://api.github.com/repos/NovikovRoman/authmanager/zipball/84db9476553e43ca83c036389bf1c64820db95c4",
+                "reference": "84db9476553e43ca83c036389bf1c64820db95c4",
                 "shasum": ""
             },
             "require": {
@@ -228,7 +228,7 @@
                 }
             ],
             "description": "Auth Manager",
-            "time": "2019-08-19T11:34:49+00:00"
+            "time": "2019-08-19T14:01:07+00:00"
         },
         {
             "name": "psr/http-message",
