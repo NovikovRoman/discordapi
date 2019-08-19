@@ -37,6 +37,6 @@ if (!empty($_GET['code'])) {
     }
 
 } else {
-    print_r($am->signin($state, false, ['prompt' => true]));
+    $am->signin($state, true, ['prompt' => true]);
 }
 ```
