@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96b82245919e9d5f7e7b0488051579e7",
+    "content-hash": "63b9041e2458f91635ba2046c9664c92",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -195,21 +195,22 @@
         },
         {
             "name": "noroman/authmanager",
-            "version": "v0.0.2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NovikovRoman/authmanager.git",
-                "reference": "84db9476553e43ca83c036389bf1c64820db95c4"
+                "reference": "7b7a0bcb30eb995b2c65f3bd2b6ffaa2721641f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NovikovRoman/authmanager/zipball/84db9476553e43ca83c036389bf1c64820db95c4",
-                "reference": "84db9476553e43ca83c036389bf1c64820db95c4",
+                "url": "https://api.github.com/repos/NovikovRoman/authmanager/zipball/7b7a0bcb30eb995b2c65f3bd2b6ffaa2721641f0",
+                "reference": "7b7a0bcb30eb995b2c65f3bd2b6ffaa2721641f0",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.3",
-                "php": ">=7.1"
+                "php": "^7.1"
             },
             "type": "library",
             "autoload": {
@@ -228,7 +229,7 @@
                 }
             ],
             "description": "Auth Manager",
-            "time": "2019-08-19T14:01:07+00:00"
+            "time": "2019-08-30T11:15:37+00:00"
         },
         {
             "name": "psr/http-message",
