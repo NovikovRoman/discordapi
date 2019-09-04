@@ -2,8 +2,6 @@
 
 namespace DiscordAPI;
 
-use GuzzleHttp\Exception\GuzzleException;
-
 class User
 {
     /** @var Client */
@@ -15,8 +13,7 @@ class User
     }
 
     /**
-     * @return mixed
-     * @throws GuzzleException
+     * @return array
      */
     public function me()
     {

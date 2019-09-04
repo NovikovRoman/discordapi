@@ -4,8 +4,10 @@ namespace DiscordAPI;
 
 use AuthManager\OAuthClientInterface;
 use AuthManager\OAuthTokenInterface;
+use Exception;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\RequestException;
 
 class Client implements OAuthClientInterface
 {
@@ -85,23 +87,32 @@ class Client implements OAuthClientInterface
      * @param array $query
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function requestGet($path, $query = [], $headers = [])
     {
         $url = self::baseUrl . $path . (empty($query) ? '' : '?' . http_build_query($query));
-        $response = $this->httpClient->request('GET', $url, [
-            'headers' => array_merge($headers, $this->getAuthHeaders()),
-        ]);
-        return json_decode($response->getBody()->getContents(), true);
+
+        try {
+            $content = $this->httpClient->request('GET', $url, [
+                'headers' => array_merge($headers, $this->getAuthHeaders()),
+            ])->getBody()->getContents();
+            $resp = json_decode($content, true);
+
+        } catch (RequestException $e) {
+            $resp = $this->returnRequestError($e);
+
+        } catch (GuzzleException $e) {
+            return $this->returnUnknownwError($e);
+        }
+
+        return $resp;
     }
 
     /**
      * @param $path
      * @param $params
      * @param array $headers
-     * @return mixed
-     * @throws GuzzleException
+     * @return array
      */
     public function requestPost($path, $params, $headers = [])
     {
@@ -111,8 +122,49 @@ class Client implements OAuthClientInterface
             'body' => http_build_query($params),
         ];
         $params['headers'] = array_merge($params['headers'], $this->getAuthHeaders());
-        $response = $this->httpClient->request('POST', self::baseUrl . $path, $params);
-        return json_decode($response->getBody()->getContents(), true);
+
+        try {
+            $content = $this->httpClient->request(
+                'POST',
+                self::baseUrl . $path,
+                $params
+            )->getBody()->getContents();
+            $resp = json_decode($content, true);
+
+        } catch (RequestException $e) {
+            $resp = $this->returnRequestError($e);
+
+        } catch (GuzzleException $e) {
+            return $this->returnUnknownwError($e);
+        }
+
+        return $resp;
     }
 
+    private function returnRequestError(RequestException $e)
+    {
+        $resp = json_decode($e->getResponse()->getBody()->getContents(), true);
+        if (!$resp) {
+            return [
+                'error' => $e->getResponse()->getReasonPhrase(),
+                'code' => -1,
+                'status' => $e->getResponse()->getStatusCode(),
+                'message' => $e->getMessage(),
+            ];
+        }
+
+        $resp['status'] = $e->getResponse()->getStatusCode();
+        $resp['error'] = $resp['code'];
+        return $resp;
+    }
+
+    private function returnUnknownwError(Exception $e)
+    {
+        return [
+            'error' => 'Internal Server Error',
+            'code' => -1,
+            'status' => 500,
+            'message' => $e->getMessage(),
+        ];
+    }
 }
