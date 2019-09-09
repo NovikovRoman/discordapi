@@ -78,7 +78,6 @@ class Client implements OAuthClientInterface
         $a = $this->getToken()->getTokenType() . ' ' . $this->getToken()->getAccessToken();
         return [
             'Authorization' => $a,
-            'Client-ID' => $this->getClientID(),
         ];
     }
 
