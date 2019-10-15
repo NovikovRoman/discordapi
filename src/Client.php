@@ -23,7 +23,7 @@ class Client implements OAuthClientInterface
     private $scope;
     private $httpClient;
 
-    public function __construct($id, $secret, $scope, $redirectUri)
+    public function __construct(string $id, string $secret, array $scope, string $redirectUri)
     {
         $this->id = $id;
         $this->secret = $secret;
@@ -75,7 +75,7 @@ class Client implements OAuthClientInterface
 
     public function getAuthHeaders(): array
     {
-        $a = $this->getToken()->getTokenType() . ' ' . $this->getToken()->getAccessToken();
+        $a = ucfirst($this->getToken()->getTokenType()) . ' ' . $this->getToken()->getAccessToken();
         return [
             'Authorization' => $a,
         ];
