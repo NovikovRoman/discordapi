@@ -19,14 +19,13 @@ $client = new Client(
 
 $am = new OAuthManager($client);
 $state = 123456;
-$code = 'http://localhost/?code=Yis7ICUZrSwEkGOH7lM2hczjApY5ur&state=123456';
 
 if (!empty($_GET['code'])) {
 
     try {
         $token = $am->getToken($_SERVER['REQUEST_URI'], $state);
-
         $client->setToken($token);
+
         $u = new User($client);
         print_r($u->me());
 
