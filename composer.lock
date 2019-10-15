@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63b9041e2458f91635ba2046c9664c92",
+    "content-hash": "500c8ef7f38f60cdb0e473339a3dd309",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -195,16 +195,16 @@
         },
         {
             "name": "noroman/authmanager",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NovikovRoman/authmanager.git",
-                "reference": "f1739b817100351c11b5024210a0f18e78f3ae8b"
+                "reference": "5cf9360b2fef559309415b77df0d2863281c3dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NovikovRoman/authmanager/zipball/f1739b817100351c11b5024210a0f18e78f3ae8b",
-                "reference": "f1739b817100351c11b5024210a0f18e78f3ae8b",
+                "url": "https://api.github.com/repos/NovikovRoman/authmanager/zipball/5cf9360b2fef559309415b77df0d2863281c3dbc",
+                "reference": "5cf9360b2fef559309415b77df0d2863281c3dbc",
                 "shasum": ""
             },
             "require": {
@@ -229,7 +229,7 @@
                 }
             ],
             "description": "Auth Manager",
-            "time": "2019-09-04T08:43:27+00:00"
+            "time": "2019-10-15T12:09:20+00:00"
         },
         {
             "name": "psr/http-message",

@@ -14,7 +14,7 @@
     "php": ">=7.1",
     "guzzlehttp/guzzle": "^6.3",
     "ext-json": "*",
-    "noroman/authmanager": "1.*"
+    "noroman/authmanager": "^1"
   },
   "autoload": {
     "psr-4": {
