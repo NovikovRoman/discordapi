@@ -11,10 +11,10 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": ">=7.1",
-    "guzzlehttp/guzzle": "^6.3",
+    "php": ">=7.3",
+    "guzzlehttp/guzzle": "^6.5",
     "ext-json": "*",
-    "noroman/authmanager": "^1"
+    "noroman/authmanager": "1.*"
   },
   "autoload": {
     "psr-4": {
